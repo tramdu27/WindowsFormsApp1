@@ -34,16 +34,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.textID = new System.Windows.Forms.TextBox();
+            this.textName = new System.Windows.Forms.TextBox();
+            this.textPassword = new System.Windows.Forms.TextBox();
+            this.textConfirmPassword = new System.Windows.Forms.TextBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
+            this.textTel = new System.Windows.Forms.TextBox();
+            this.checkDisabled = new System.Windows.Forms.CheckBox();
+            this.btnNhaptiep = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnDong = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -102,100 +103,113 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Nhập lại mật khẩu";
             // 
-            // textBox1
+            // textID
             // 
-            this.textBox1.Location = new System.Drawing.Point(191, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 22);
-            this.textBox1.TabIndex = 5;
+            this.textID.Location = new System.Drawing.Point(191, 25);
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(297, 22);
+            this.textID.TabIndex = 5;
             // 
-            // textBox2
+            // textName
             // 
-            this.textBox2.Location = new System.Drawing.Point(191, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(297, 22);
-            this.textBox2.TabIndex = 6;
+            this.textName.Location = new System.Drawing.Point(191, 77);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(297, 22);
+            this.textName.TabIndex = 6;
             // 
-            // textBox3
+            // textPassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(191, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(297, 22);
-            this.textBox3.TabIndex = 7;
+            this.textPassword.Location = new System.Drawing.Point(191, 128);
+            this.textPassword.Name = "textPassword";
+            this.textPassword.Size = new System.Drawing.Size(297, 22);
+            this.textPassword.TabIndex = 7;
             // 
-            // textBox4
+            // textConfirmPassword
             // 
-            this.textBox4.Location = new System.Drawing.Point(191, 184);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(297, 22);
-            this.textBox4.TabIndex = 8;
+            this.textConfirmPassword.Location = new System.Drawing.Point(191, 184);
+            this.textConfirmPassword.Name = "textConfirmPassword";
+            this.textConfirmPassword.Size = new System.Drawing.Size(297, 22);
+            this.textConfirmPassword.TabIndex = 8;
             // 
-            // textBox5
+            // textEmail
             // 
-            this.textBox5.Location = new System.Drawing.Point(191, 243);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(297, 22);
-            this.textBox5.TabIndex = 9;
+            this.textEmail.Location = new System.Drawing.Point(191, 243);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(297, 22);
+            this.textEmail.TabIndex = 9;
             // 
-            // textBox6
+            // textTel
             // 
-            this.textBox6.Location = new System.Drawing.Point(191, 294);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(297, 22);
-            this.textBox6.TabIndex = 10;
+            this.textTel.Location = new System.Drawing.Point(191, 294);
+            this.textTel.Name = "textTel";
+            this.textTel.Size = new System.Drawing.Size(297, 22);
+            this.textTel.TabIndex = 10;
             // 
-            // checkBox1
+            // checkDisabled
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(194, 337);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 20);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "Không hiển thị ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkDisabled.AutoSize = true;
+            this.checkDisabled.Location = new System.Drawing.Point(194, 337);
+            this.checkDisabled.Name = "checkDisabled";
+            this.checkDisabled.Size = new System.Drawing.Size(114, 20);
+            this.checkDisabled.TabIndex = 11;
+            this.checkDisabled.Text = "Không hiển thị ";
+            this.checkDisabled.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnNhaptiep
             // 
-            this.button1.Location = new System.Drawing.Point(194, 380);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 26);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Nhập tiếp";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNhaptiep.Location = new System.Drawing.Point(194, 380);
+            this.btnNhaptiep.Name = "btnNhaptiep";
+            this.btnNhaptiep.Size = new System.Drawing.Size(83, 26);
+            this.btnNhaptiep.TabIndex = 12;
+            this.btnNhaptiep.Text = "Nhập tiếp";
+            this.btnNhaptiep.UseVisualStyleBackColor = true;
+            this.btnNhaptiep.Click += new System.EventHandler(this.btnNhaptiep_Click);
             // 
-            // button2
+            // btnLuu
             // 
-            this.button2.Location = new System.Drawing.Point(301, 380);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 26);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Nhập tiếp";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLuu.Location = new System.Drawing.Point(301, 380);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(83, 26);
+            this.btnLuu.TabIndex = 13;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // button3
+            // btnDong
             // 
-            this.button3.Location = new System.Drawing.Point(408, 380);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(83, 26);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Nhập tiếp";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDong.Location = new System.Drawing.Point(408, 380);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(83, 26);
+            this.btnDong.TabIndex = 14;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(42, 427);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 16);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "label6";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 432);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(543, 522);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnDong);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnNhaptiep);
+            this.Controls.Add(this.checkDisabled);
+            this.Controls.Add(this.textTel);
+            this.Controls.Add(this.textEmail);
+            this.Controls.Add(this.textConfirmPassword);
+            this.Controls.Add(this.textPassword);
+            this.Controls.Add(this.textName);
+            this.Controls.Add(this.textID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -205,6 +219,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Form2";
             this.Text = "Cập nhật thông tin người dùng";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,15 +233,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textID;
+        private System.Windows.Forms.TextBox textName;
+        private System.Windows.Forms.TextBox textPassword;
+        private System.Windows.Forms.TextBox textConfirmPassword;
+        private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.TextBox textTel;
+        private System.Windows.Forms.CheckBox checkDisabled;
+        private System.Windows.Forms.Button btnNhaptiep;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.Label label6;
     }
 }
