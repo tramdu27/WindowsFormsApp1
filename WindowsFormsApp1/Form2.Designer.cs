@@ -44,6 +44,7 @@
             this.btnNhaptiep = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
+            this.lblMess = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -185,21 +186,33 @@
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.button3_Click);
             // 
+            // lblMess
+            // 
+            this.lblMess.AutoSize = true;
+            this.lblMess.Location = new System.Drawing.Point(191, 209);
+            this.lblMess.Name = "lblMess";
+            this.lblMess.Size = new System.Drawing.Size(54, 16);
+            this.lblMess.TabIndex = 15;
+            this.lblMess.Text = "lblMess";
+            this.lblMess.Visible = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(42, 427);
+            this.label6.Location = new System.Drawing.Point(191, 268);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 16);
-            this.label6.TabIndex = 15;
+            this.label6.TabIndex = 16;
             this.label6.Text = "label6";
+            this.label6.Visible = false;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 522);
+            this.ClientSize = new System.Drawing.Size(543, 428);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblMess);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnNhaptiep);
@@ -243,6 +256,7 @@
         private System.Windows.Forms.Button btnNhaptiep;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.Label lblMess;
         private System.Windows.Forms.Label label6;
     }
 }

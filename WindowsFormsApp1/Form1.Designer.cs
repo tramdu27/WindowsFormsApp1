@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,8 +95,8 @@
             // 
             // STT
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STT.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle4;
             this.STT.FillWeight = 41.17647F;
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 6;
@@ -217,7 +217,7 @@
             this.xemToolStripMenuItem,
             this.xoaToolStripMenuItem});
             this.ContextMenuStrip1.Name = "contextMenuStrip1";
-            this.ContextMenuStrip1.Size = new System.Drawing.Size(173, 100);
+            this.ContextMenuStrip1.Size = new System.Drawing.Size(211, 128);
             this.ContextMenuStrip1.Text = "Thực hiện";
             this.ContextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStrip1_Opening);
             // 
@@ -241,8 +241,9 @@
             // 
             this.xemToolStripMenuItem.Name = "xemToolStripMenuItem";
             this.xemToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.xemToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
+            this.xemToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.xemToolStripMenuItem.Text = "Xem";
+            this.xemToolStripMenuItem.Click += new System.EventHandler(this.xemToolStripMenuItem_Click);
             // 
             // xoaToolStripMenuItem
             // 

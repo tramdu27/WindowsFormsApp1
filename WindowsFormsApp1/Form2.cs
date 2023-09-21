@@ -22,8 +22,8 @@ namespace WindowsFormsApp1
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
 
-       // SqlConnection con = new SqlConnection("Data Source=VIP\\SQL2017;Initial Catalog=BasicWeb;Integrated Security=True");
-       
+        // SqlConnection con = new SqlConnection("Data Source=VIP\\SQL2017;Initial Catalog=BasicWeb;Integrated Security=True");
+
         public Form2(Form1 parent)
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-              this.Close();
+            this.Close();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -50,99 +50,103 @@ namespace WindowsFormsApp1
 
         }
 
+        private bool IsValidEmail(string email)
+        {
 
-     
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            Regex regex = new Regex(pattern);
+
+            return regex.IsMatch(email);
+        }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string email = textEmail.Text;
-
+            string email = textEmail.Text.Trim();
+            string password = textPassword.Text;
+            string confirmPassword = textConfirmPassword.Text;
             string userid = textID.Text.ToUpper();
             string username = textName.Text;
-            string password = textPassword.Text;
-            //string email = textPassword.Text;
+
             string tel = textTel.Text;
             int disabled = checkDisabled.Checked ? 1 : 0;
+
+
+
             using (SqlConnection connection = new SqlConnection(cs))
             {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand("pcd_SaveUsers", connection))
+                if (textID.TextLength == 0)
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@userid", userid);
-                    command.Parameters.AddWithValue("@username", username);
-                    command.Parameters.AddWithValue("@password", password);
-                    command.Parameters.AddWithValue("@email", email);
-                    command.Parameters.AddWithValue("@tel", tel);
-                    command.Parameters.AddWithValue("@disabled", disabled);
-
-
-                    command.ExecuteNonQuery();
-
-
+                    MessageBox.Show("Vui lòng nhập mã người dùng!", "Thông báo", MessageBoxButtons.OK);
+                    textID.Focus();
+                    return;
                 }
-                
+                if (!IsValidEmail(email))
+                {
+                    label6.Text = "Email không hợp lệ.";
+                    label6.Visible = true;
+                }
 
+                if (password != confirmPassword)
+                {
+                    lblMess.Text = "Mật khẩu không khớp.";
+                    lblMess.Visible = true;
+                }
+                else
+                {
+                    label6.Visible = false;
+                    lblMess.Visible = false;
+
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("pcd_CheckID", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@userID", userid);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            reader.Close();
+                            MessageBox.Show("Mã người dùng đã tồn tại!", "Thông báo", MessageBoxButtons.OK);
+                            textID.Focus();
+                            return;
+                        }
+                        reader.Close();
+                    }
+
+                    using (SqlCommand command = new SqlCommand("pcd_SaveUsers", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@userid", userid);
+                        command.Parameters.AddWithValue("@username", username);
+                        command.Parameters.AddWithValue("@password", password);
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@tel", tel);
+                        command.Parameters.AddWithValue("@disabled", disabled);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK);
+                }
+            }
+
+
+
+
+
+        } 
+        public void btnNhaptiep_Click(object sender, EventArgs e)
+            {
+
+                textID.Clear();
+                textName.Clear();
+                textPassword.Clear();
+                textConfirmPassword.Clear();
+                textTel.Clear();
+                textEmail.Clear();
+                checkDisabled.Checked = false;
 
             }
-            //btnNhaptiep.Visible = true;
-            //btnLuu.Visible = false;
-            //textID.Clear();
-            //textName.Clear();
-            //textPassword.Clear();
-            //textConfirmPassword.Clear();
-            //textTel.Clear();
-            //textEmail.Clear();
-            //checkDisabled.Checked = false;
-            //Form1 parentForm = (Form1)this.Owner; // Lấy tham chiếu đến Form1
-            //parentForm.ReloadDataGridView();
-            
-            
         }
-
-        private void btnNhaptiep_Click(object sender, EventArgs e)
-        {
-            //string userid = textID.Text.Trim();
-            //string username = textName.Text;
-            //string password = textPassword.Text;
-            //string email = textPassword.Text;
-            //string tel = textTel.Text;
-            //int disabled = checkDisabled.Checked ? 1 : 0;
-            //using (SqlConnection connection = new SqlConnection(cs))
-            //{
-            //    connection.Open();
-
-            //    using (SqlCommand command = new SqlCommand("pcd_SaveUsers", connection))
-            //    {
-            //        command.CommandType = CommandType.StoredProcedure;
-            //        command.Parameters.AddWithValue("@userid", userid);
-            //        command.Parameters.AddWithValue("@username", username);
-            //        command.Parameters.AddWithValue("@password", password);
-            //        command.Parameters.AddWithValue("@email", email);
-            //        command.Parameters.AddWithValue("@tel", tel);
-            //        command.Parameters.AddWithValue("@disabled", disabled);
-
-
-            //        command.ExecuteNonQuery();
-
-
-            //    }
-
-
-
-            //}
-            //btnNhaptiep.Visible = false;
-            //btnLuu.Visible = true;
-
-
-            textID.Clear();
-            textName.Clear();
-            textPassword.Clear();
-            textConfirmPassword.Clear();
-            textTel.Clear();
-            textEmail.Clear();
-            checkDisabled.Checked = false;
-
-        }
-    }
-}
+    } 

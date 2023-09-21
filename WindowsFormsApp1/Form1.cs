@@ -272,5 +272,29 @@ namespace WindowsFormsApp1
         {
             dataGridView1.Size = new System.Drawing.Size(this.ClientSize.Width - 0, this.ClientSize.Height - 40);
         }
+
+        private void xemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+               
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+                int stt = Convert.ToInt32(selectedRow.Cells["STT"].Value);
+                string userID = selectedRow.Cells["UserID"].Value.ToString();
+                string userName = selectedRow.Cells["UserName"].Value.ToString();
+                string userEmail = selectedRow.Cells["Email"].Value.ToString();
+                string password = selectedRow.Cells["Password"].Value.ToString();
+                string tel = selectedRow.Cells["Tel"].Value.ToString();
+                bool disabled = Convert.ToBoolean(selectedRow.Cells["Disabled"].Value);
+
+
+                Form4 form4 = new Form4(userID, userName, userEmail, password, tel, disabled);
+                form4.ShowDialog();
+
+
+            }
+
+        }
     }
 }
