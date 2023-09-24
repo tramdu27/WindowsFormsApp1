@@ -30,7 +30,6 @@
         {
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.checkDisabled = new System.Windows.Forms.CheckBox();
             this.textTel = new System.Windows.Forms.TextBox();
             this.textEmail = new System.Windows.Forms.TextBox();
@@ -62,15 +61,6 @@
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(184, 320);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 26);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Nhập tiếp";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // checkDisabled
             // 
@@ -169,7 +159,6 @@
             this.ClientSize = new System.Drawing.Size(533, 378);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkDisabled);
             this.Controls.Add(this.textTel);
             this.Controls.Add(this.textEmail);
@@ -193,7 +182,6 @@
 
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkDisabled;
         private System.Windows.Forms.TextBox textTel;
         private System.Windows.Forms.TextBox textEmail;

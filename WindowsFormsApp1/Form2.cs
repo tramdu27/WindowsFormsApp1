@@ -17,17 +17,17 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        private Form1 parentForm;
+        private Form1 form1;
 
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
 
         // SqlConnection con = new SqlConnection("Data Source=VIP\\SQL2017;Initial Catalog=BasicWeb;Integrated Security=True");
 
-        public Form2(Form1 parent)
+        public Form2(Form1 form1)
         {
             InitializeComponent();
-            parentForm = parent;
+            this.form1 = form1;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -98,41 +98,48 @@ namespace WindowsFormsApp1
 
                     connection.Open();
 
-                    using (SqlCommand cmd = new SqlCommand("pcd_CheckID", connection))
+                    using (SqlCommand cmd = new SqlCommand("CheckIfIdExists", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@userID", userid);
-                        SqlDataReader reader = cmd.ExecuteReader();
+                        //cmd.Parameters.AddWithValue("@userID", userid);
+                        SqlParameter idParameter = new SqlParameter("@ID", SqlDbType.NVarChar, 50);
+                        idParameter.Value = textID.Text; // Sử dụng giá trị từ TextBox
+                        cmd.Parameters.Add(idParameter);
 
-                        if (reader.HasRows)
+                        // Thực hiện truy vấn
+                        int idExists = (int)cmd.ExecuteScalar();
+
+                        if (idExists == 1)
                         {
-                            reader.Close();
                             MessageBox.Show("Mã người dùng đã tồn tại!", "Thông báo", MessageBoxButtons.OK);
-                            textID.Focus();
-                            return;
                         }
-                        reader.Close();
+
+                        else
+                        {
+
+                            using (SqlCommand command = new SqlCommand("pcd_SaveUsers", connection))
+                            {
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.AddWithValue("@userid", userid);
+                                command.Parameters.AddWithValue("@username", username);
+                                command.Parameters.AddWithValue("@password", password);
+                                command.Parameters.AddWithValue("@email", email);
+                                command.Parameters.AddWithValue("@tel", tel);
+                                command.Parameters.AddWithValue("@disabled", disabled);
+
+                                command.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK);
+                        }
                     }
 
-                    using (SqlCommand command = new SqlCommand("pcd_SaveUsers", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@userid", userid);
-                        command.Parameters.AddWithValue("@username", username);
-                        command.Parameters.AddWithValue("@password", password);
-                        command.Parameters.AddWithValue("@email", email);
-                        command.Parameters.AddWithValue("@tel", tel);
-                        command.Parameters.AddWithValue("@disabled", disabled);
-
-                        command.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK);
+                    
                 }
             }
 
 
-
+            form1.ReloadData();
 
 
         } 

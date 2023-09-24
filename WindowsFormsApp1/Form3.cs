@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
     {
+        private Form1 form1;
+        private DataGridView dataGridView1;
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
 
@@ -26,7 +28,7 @@ namespace WindowsFormsApp1
         //private string email;
         //private string tel;
         //private int disabled;
-        public Form3(string userID, string userName, string password, string email,string tel, bool disabled)
+        public Form3(string userID, string userName, string password, string email, string tel, bool disabled, Form1 form1)
         {
             InitializeComponent();
             //this.userID = userID;
@@ -41,6 +43,8 @@ namespace WindowsFormsApp1
             textEmail.Text = email;
             textTel.Text = tel;
             checkDisabled.Checked = disabled;
+            this.form1 = form1;
+           
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -83,6 +87,7 @@ namespace WindowsFormsApp1
             textTel.Clear();
             textEmail.Clear();
             checkDisabled.Checked = false;
+            form1.ReloadData();
 
         }
     }

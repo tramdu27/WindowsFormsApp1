@@ -45,9 +45,11 @@ namespace WindowsFormsApp1
             //dataGridView1.DataSource = bindingSource;
 
         }
-        private void ReloadData()
+        public void ReloadData()
         {
-
+            this.pcd_GetUsersTableAdapter.Fill(this.basicWebDataSet.pcd_GetUsers);
+            
+            this.usersTableAdapter.Fill(this.basicWebDataSet.Users);
 
         }
 
@@ -68,32 +70,32 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        private DataTable GetDataFromSource()
-        {
-            // Kết nối đến cơ sở dữ liệu hoặc lấy dữ liệu từ nguồn khác
-            using (SqlConnection connection = new SqlConnection(cs))
-            {
-                connection.Open();
+        //private DataTable GetDataFromSource()
+        //{
+        //    // Kết nối đến cơ sở dữ liệu hoặc lấy dữ liệu từ nguồn khác
+        //    using (SqlConnection connection = new SqlConnection(cs))
+        //    {
+        //        connection.Open();
 
-                using (SqlCommand command = new SqlCommand("SELECT * FROM Users", connection))
-                {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        return dataTable;
-                    }
-                }
-            }
-        }
-        public void ReloadDataGridView()
-        {
-            // Lấy dữ liệu từ nguồn
-            DataTable dataSource = GetDataFromSource();
+        //        using (SqlCommand command = new SqlCommand("SELECT * FROM Users", connection))
+        //        {
+        //            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+        //            {
+        //                DataTable dataTable = new DataTable();
+        //                adapter.Fill(dataTable);
+        //                return dataTable;
+        //            }
+        //        }
+        //    }
+        //}
+        //public void ReloadDataGridView()
+        //{
+        //    // Lấy dữ liệu từ nguồn
+        //    DataTable dataSource = GetDataFromSource();
 
-            // Đặt nguồn dữ liệu mới cho DataGridView
-            dataGridView1.DataSource = dataSource;
-        }
+        //    // Đặt nguồn dữ liệu mới cho DataGridView
+        //    dataGridView1.DataSource = dataSource;
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -182,6 +184,7 @@ namespace WindowsFormsApp1
         }
         private void sưaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 // Lấy dòng dữ liệu được chọn
@@ -196,10 +199,10 @@ namespace WindowsFormsApp1
                 bool disabled = Convert.ToBoolean(selectedRow.Cells["Disabled"].Value);
                 // Mở Form 3 và truyền thông tin qua constructor
 
-                Form3 form3 = new Form3(userID, userName, userEmail, password, tel, disabled);
+                Form3 form3 = new Form3(userID, userName, userEmail, password, tel, disabled, this);
                 form3.ShowDialog();
-
             }
+
 
         }
 
@@ -237,11 +240,12 @@ namespace WindowsFormsApp1
 
                 }
 
-                
+                this.ReloadData();
+
 
 
             }
-           
+
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -289,7 +293,7 @@ namespace WindowsFormsApp1
                 bool disabled = Convert.ToBoolean(selectedRow.Cells["Disabled"].Value);
 
 
-                Form4 form4 = new Form4(userID, userName, userEmail, password, tel, disabled);
+                Form4 form4 = new Form4(userID, userName, userEmail, password, tel, disabled, this);
                 form4.ShowDialog();
 
 
