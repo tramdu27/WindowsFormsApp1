@@ -41,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblMess = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button3
@@ -152,11 +154,33 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Mã nhân viên ";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(181, 215);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 16);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "label6";
+            this.label6.Visible = false;
+            // 
+            // lblMess
+            // 
+            this.lblMess.AutoSize = true;
+            this.lblMess.Location = new System.Drawing.Point(181, 156);
+            this.lblMess.Name = "lblMess";
+            this.lblMess.Size = new System.Drawing.Size(54, 16);
+            this.lblMess.TabIndex = 31;
+            this.lblMess.Text = "lblMess";
+            this.lblMess.Visible = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 378);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblMess);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.checkDisabled);
@@ -193,5 +217,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblMess;
     }
 }

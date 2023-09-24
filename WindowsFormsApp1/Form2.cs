@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
 
-        // SqlConnection con = new SqlConnection("Data Source=VIP\\SQL2017;Initial Catalog=BasicWeb;Integrated Security=True");
+        
 
         public Form2(Form1 form1)
         {
@@ -66,7 +66,6 @@ namespace WindowsFormsApp1
             string confirmPassword = textConfirmPassword.Text;
             string userid = textID.Text.ToUpper();
             string username = textName.Text;
-
             string tel = textTel.Text;
             int disabled = checkDisabled.Checked ? 1 : 0;
 
@@ -101,12 +100,12 @@ namespace WindowsFormsApp1
                     using (SqlCommand cmd = new SqlCommand("CheckIfIdExists", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        //cmd.Parameters.AddWithValue("@userID", userid);
+                       
                         SqlParameter idParameter = new SqlParameter("@ID", SqlDbType.NVarChar, 50);
-                        idParameter.Value = textID.Text; // Sử dụng giá trị từ TextBox
+                        idParameter.Value = textID.Text;
                         cmd.Parameters.Add(idParameter);
 
-                        // Thực hiện truy vấn
+                       
                         int idExists = (int)cmd.ExecuteScalar();
 
                         if (idExists == 1)

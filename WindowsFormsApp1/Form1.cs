@@ -36,13 +36,7 @@ namespace WindowsFormsApp1
             this.pcd_GetUsersTableAdapter.Fill(this.basicWebDataSet.pcd_GetUsers);
             // TODO: This line of code loads data into the 'basicWebDataSet.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.basicWebDataSet.Users);
-            //dataSet = new DataSet();
-
-            //// Gắn DataGridView với BindingSource
-            //BindingSource bindingSource = new BindingSource();
-            //bindingSource.DataSource = dataSet;
-            //bindingSource.DataMember = "Table";
-            //dataGridView1.DataSource = bindingSource;
+           
 
         }
         public void ReloadData()
@@ -70,33 +64,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        //private DataTable GetDataFromSource()
-        //{
-        //    // Kết nối đến cơ sở dữ liệu hoặc lấy dữ liệu từ nguồn khác
-        //    using (SqlConnection connection = new SqlConnection(cs))
-        //    {
-        //        connection.Open();
-
-        //        using (SqlCommand command = new SqlCommand("SELECT * FROM Users", connection))
-        //        {
-        //            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-        //            {
-        //                DataTable dataTable = new DataTable();
-        //                adapter.Fill(dataTable);
-        //                return dataTable;
-        //            }
-        //        }
-        //    }
-        //}
-        //public void ReloadDataGridView()
-        //{
-        //    // Lấy dữ liệu từ nguồn
-        //    DataTable dataSource = GetDataFromSource();
-
-        //    // Đặt nguồn dữ liệu mới cho DataGridView
-        //    dataGridView1.DataSource = dataSource;
-        //}
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -164,30 +132,14 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            //if (dataGridView1.SelectedRows.Count > 0)
-            //{
-            //    // Lấy dòng dữ liệu được chọn
-            //    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
-              
-            //    string userID = selectedRow.Cells["UserID"].Value.ToString();
-            //    string userName = selectedRow.Cells["UserName"].Value.ToString();
-            //    string userEmail = selectedRow.Cells["Email"].Value.ToString();
-            //    string password = selectedRow.Cells["Password"].Value.ToString();
-            //    string tel = selectedRow.Cells["Tel"].Value.ToString();
-            //    bool disabled = Convert.ToBoolean(selectedRow.Cells["Disabled"].Value);
-            //    // Mở Form 3 và truyền thông tin qua constructor
-                
-            //    Form3 form3 = new Form3(userID, userName, userEmail, password, tel, disabled);
-            //    form3.ShowDialog();
-            //}
+           
         }
         private void sưaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Lấy dòng dữ liệu được chọn
+                
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
                 int stt = Convert.ToInt32(selectedRow.Cells["STT"].Value);
@@ -197,7 +149,7 @@ namespace WindowsFormsApp1
                 string password = selectedRow.Cells["Password"].Value.ToString();
                 string tel = selectedRow.Cells["Tel"].Value.ToString();
                 bool disabled = Convert.ToBoolean(selectedRow.Cells["Disabled"].Value);
-                // Mở Form 3 và truyền thông tin qua constructor
+                
 
                 Form3 form3 = new Form3(userID, userName, userEmail, password, tel, disabled, this);
                 form3.ShowDialog();
