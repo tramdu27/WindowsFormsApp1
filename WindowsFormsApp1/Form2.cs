@@ -145,13 +145,93 @@ namespace WindowsFormsApp1
         public void btnNhaptiep_Click(object sender, EventArgs e)
             {
 
-                textID.Clear();
-                textName.Clear();
-                textPassword.Clear();
-                textConfirmPassword.Clear();
-                textTel.Clear();
-                textEmail.Clear();
-                checkDisabled.Checked = false;
+            string email = textEmail.Text.Trim();
+            string password = textPassword.Text;
+            string confirmPassword = textConfirmPassword.Text;
+            string userid = textID.Text.ToUpper();
+            string username = textName.Text;
+            string tel = textTel.Text;
+            int disabled = checkDisabled.Checked ? 1 : 0;
+
+
+
+            using (SqlConnection connection = new SqlConnection(cs))
+            {
+                if (textID.TextLength == 0)
+                {
+                    MessageBox.Show("Vui lòng nhập mã người dùng!", "Thông báo", MessageBoxButtons.OK);
+                    textID.Focus();
+                    return;
+                }
+                if (!IsValidEmail(email))
+                {
+                    label6.Text = "Email không hợp lệ.";
+                    label6.Visible = true;
+                }
+
+                if (password != confirmPassword)
+                {
+                    lblMess.Text = "Mật khẩu không khớp.";
+                    lblMess.Visible = true;
+                }
+                else
+                {
+                    label6.Visible = false;
+                    lblMess.Visible = false;
+
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("CheckIfIdExists", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter idParameter = new SqlParameter("@ID", SqlDbType.NVarChar, 50);
+                        idParameter.Value = textID.Text;
+                        cmd.Parameters.Add(idParameter);
+
+
+                        int idExists = (int)cmd.ExecuteScalar();
+
+                        if (idExists == 1)
+                        {
+                            MessageBox.Show("Mã người dùng đã tồn tại!", "Thông báo", MessageBoxButtons.OK);
+                        }
+
+                        else
+                        {
+
+                            using (SqlCommand command = new SqlCommand("pcd_SaveUsers", connection))
+                            {
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.AddWithValue("@userid", userid);
+                                command.Parameters.AddWithValue("@username", username);
+                                command.Parameters.AddWithValue("@password", password);
+                                command.Parameters.AddWithValue("@email", email);
+                                command.Parameters.AddWithValue("@tel", tel);
+                                command.Parameters.AddWithValue("@disabled", disabled);
+
+                                command.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK);
+                        }
+                        textID.Clear();
+                        textName.Clear();
+                        textPassword.Clear();
+                        textConfirmPassword.Clear();
+                        textTel.Clear();
+                        textEmail.Clear();
+                        checkDisabled.Checked = false;
+                    }
+
+
+                }
+            }
+
+
+            form1.ReloadData();
+
+           
 
             }
         }
