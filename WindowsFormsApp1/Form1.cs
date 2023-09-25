@@ -114,8 +114,7 @@ namespace WindowsFormsApp1
       
         private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(this); // Truyền tham chiếu đến Form1
-            form2.ShowDialog();
+           
         }
 
         private void pcd_GetUsersBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -137,23 +136,23 @@ namespace WindowsFormsApp1
         private void sưaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
+            //if (dataGridView1.SelectedRows.Count > 0)
+            //{
                 
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+            //    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-                int stt = Convert.ToInt32(selectedRow.Cells["STT"].Value);
-                string userID = selectedRow.Cells["UserID"].Value.ToString();
-                string userName = selectedRow.Cells["UserName"].Value.ToString();
-                string userEmail = selectedRow.Cells["Email"].Value.ToString();
-                string password = selectedRow.Cells["Password"].Value.ToString();
-                string tel = selectedRow.Cells["Tel"].Value.ToString();
-                bool disabled = Convert.ToBoolean(selectedRow.Cells["Disabled"].Value);
+            //    int stt = Convert.ToInt32(selectedRow.Cells["STT"].Value);
+            //    string userID = selectedRow.Cells["UserID"].Value.ToString();
+            //    string userName = selectedRow.Cells["UserName"].Value.ToString();
+            //    string userEmail = selectedRow.Cells["Email"].Value.ToString();
+            //    string password = selectedRow.Cells["Password"].Value.ToString();
+            //    string tel = selectedRow.Cells["Tel"].Value.ToString();
+            //    bool disabled = Convert.ToBoolean(selectedRow.Cells["Disabled"].Value);
                 
 
-                Form3 form3 = new Form3(userID, userName, userEmail, password, tel, disabled, this);
-                form3.ShowDialog();
-            }
+            //    Form3 form3 = new Form3(userID, userName, userEmail, password, tel, disabled, this);
+            //    form3.ShowDialog();
+            //}
 
 
         }
@@ -231,25 +230,25 @@ namespace WindowsFormsApp1
 
         private void xemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
+            //if (dataGridView1.SelectedRows.Count > 0)
+            //{
                
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+            //    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-                int stt = Convert.ToInt32(selectedRow.Cells["STT"].Value);
-                string userID = selectedRow.Cells["UserID"].Value.ToString();
-                string userName = selectedRow.Cells["UserName"].Value.ToString();
-                string userEmail = selectedRow.Cells["Email"].Value.ToString();
-                string password = selectedRow.Cells["Password"].Value.ToString();
-                string tel = selectedRow.Cells["Tel"].Value.ToString();
-                bool disabled = Convert.ToBoolean(selectedRow.Cells["Disabled"].Value);
-
-
-                Form4 form4 = new Form4(userID, userName, userEmail, password, tel, disabled, this);
-                form4.ShowDialog();
+            //    int stt = Convert.ToInt32(selectedRow.Cells["STT"].Value);
+            //    string userID = selectedRow.Cells["UserID"].Value.ToString();
+            //    string userName = selectedRow.Cells["UserName"].Value.ToString();
+            //    string userEmail = selectedRow.Cells["Email"].Value.ToString();
+            //    string password = selectedRow.Cells["Password"].Value.ToString();
+            //    string tel = selectedRow.Cells["Tel"].Value.ToString();
+            //    bool disabled = Convert.ToBoolean(selectedRow.Cells["Disabled"].Value);
 
 
-            }
+            //    Form4 form4 = new Form4(userID, userName, userEmail, password, tel, disabled, this);
+            //    form4.ShowDialog();
+
+
+            //}
 
         }
     }

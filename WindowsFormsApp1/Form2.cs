@@ -10,24 +10,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.BasicWebDataSetTableAdapters;
-using static C1.Util.Win.Win32;
+
 using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        private Form1 form1;
+       
 
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
+        private Mainform mainform;
 
-        
+        //public Form2(Form1 form1)
+        //{
+        //    InitializeComponent();
+        //    this.form1 = form1;
+        //}
 
-        public Form2(Form1 form1)
+        public Form2(Mainform mainform)
         {
             InitializeComponent();
-            this.form1 = form1;
+            this.mainform = mainform;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -138,7 +143,7 @@ namespace WindowsFormsApp1
             }
 
 
-            form1.ReloadData();
+            mainform.ReloadData();
 
 
         } 
@@ -229,7 +234,7 @@ namespace WindowsFormsApp1
             }
 
 
-            form1.ReloadData();
+            mainform.ReloadData();
 
            
 

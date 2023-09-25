@@ -19,13 +19,13 @@ namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
     {
-        private Form1 form1;
+        private Mainform mainform;
         private DataGridView dataGridView1;
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
 
       
-        public Form3(string userID, string userName, string password, string email, string tel, bool disabled, Form1 form1)
+        public Form3(string userID, string userName, string password, string email, string tel, bool disabled, Mainform mainform)
         {
             InitializeComponent();
             
@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             textEmail.Text = email;
             textTel.Text = tel;
             checkDisabled.Checked = disabled;
-            this.form1 = form1;
+            this.mainform = mainform;
            
         }
 
@@ -104,7 +104,7 @@ namespace WindowsFormsApp1
                 textTel.Clear();
                 textEmail.Clear();
                 checkDisabled.Checked = false;
-                form1.ReloadData();
+                mainform.ReloadData();
                 this.Close();
             }
            
