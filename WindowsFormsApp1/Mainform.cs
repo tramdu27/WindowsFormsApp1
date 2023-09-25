@@ -59,6 +59,22 @@ namespace WindowsFormsApp1
             Form2 form2 = new Form2(this); // Truyền tham chiếu đến Form1
             form2.ShowDialog();
         }
+        private void FlexGrid1_RowsAdded(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
+        {
+            UpdateRowNumbers();
+        }
+
+        private void FlexGrid1_RowsRemoved(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
+        {
+            UpdateRowNumbers();
+        }
+        private void UpdateRowNumbers()
+        {
+            for (int i = 0; i < FlexGrid1.Rows.Count; i++)
+            {
+                FlexGrid1[i + 1, "STT"] = (i + 1).ToString();
+            }
+        }
 
         private void c1Command3_Click(object sender, C1.Win.C1Command.ClickEventArgs e)
         {
@@ -191,6 +207,11 @@ namespace WindowsFormsApp1
 
 
             }
+
+        }
+
+        private void FlexGrid1_Click(object sender, EventArgs e)
+        {
 
         }
     }

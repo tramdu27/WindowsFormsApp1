@@ -76,8 +76,6 @@
             this.FlexGrid1.AllowDelete = true;
             this.FlexGrid1.AllowEditing = false;
             this.FlexGrid1.AllowResizing = C1.Win.C1FlexGrid.AllowResizingEnum.Both;
-            this.FlexGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.FlexGrid1.AutoResize = true;
             this.FlexGrid1.ColumnInfo = resources.GetString("FlexGrid1.ColumnInfo");
             this.FlexGrid1.DataSource = this.pcd_GetUsersBindingSource;
@@ -86,6 +84,7 @@
             this.FlexGrid1.Rows.Count = 1;
             this.FlexGrid1.Size = new System.Drawing.Size(801, 634);
             this.FlexGrid1.TabIndex = 0;
+            this.FlexGrid1.Click += new System.EventHandler(this.FlexGrid1_Click);
             // 
             // pcd_GetUsersBindingSource
             // 
@@ -110,6 +109,7 @@
             // 
             this.c1Command2.Image = ((System.Drawing.Image)(resources.GetObject("c1Command2.Image")));
             this.c1Command2.Name = "c1Command2";
+            this.c1Command2.Shortcut = System.Windows.Forms.Shortcut.CtrlN;
             this.c1Command2.ShortcutText = "";
             this.c1Command2.Text = "Insert";
             this.c1Command2.Click += new C1.Win.C1Command.ClickEventHandler(this.c1Command2_Click);
@@ -123,6 +123,7 @@
             // 
             this.c1Command3.Image = ((System.Drawing.Image)(resources.GetObject("c1Command3.Image")));
             this.c1Command3.Name = "c1Command3";
+            this.c1Command3.Shortcut = System.Windows.Forms.Shortcut.CtrlD;
             this.c1Command3.ShortcutText = "";
             this.c1Command3.Text = "Delete";
             this.c1Command3.Click += new C1.Win.C1Command.ClickEventHandler(this.c1Command3_Click);
@@ -136,6 +137,7 @@
             // 
             this.c1Command1.Image = ((System.Drawing.Image)(resources.GetObject("c1Command1.Image")));
             this.c1Command1.Name = "c1Command1";
+            this.c1Command1.Shortcut = System.Windows.Forms.Shortcut.CtrlE;
             this.c1Command1.ShortcutText = "";
             this.c1Command1.Text = "Edit";
             this.c1Command1.Click += new C1.Win.C1Command.ClickEventHandler(this.c1Command1_Click);
@@ -149,6 +151,7 @@
             // 
             this.c1Command4.Image = ((System.Drawing.Image)(resources.GetObject("c1Command4.Image")));
             this.c1Command4.Name = "c1Command4";
+            this.c1Command4.Shortcut = System.Windows.Forms.Shortcut.CtrlV;
             this.c1Command4.ShortcutText = "";
             this.c1Command4.Text = "Post";
             this.c1Command4.Click += new C1.Win.C1Command.ClickEventHandler(this.c1Command4_Click);

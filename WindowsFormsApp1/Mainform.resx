@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="FlexGrid1.ColumnInfo" xml:space="preserve">
-    <value>7,1,0,0,0,-1,Columns:1{Width:56;Name:"UserID";Caption:"UserID";Style:"DataType:System.String;TextAlign:LeftCenter;";}	2{Width:80;Name:"UserName";Caption:"UserName";Style:"DataType:System.String;TextAlign:LeftCenter;";}	3{Width:78;Name:"PassWord";Caption:"PassWord";Style:"DataType:System.String;TextAlign:LeftCenter;";}	4{Width:48;Name:"Email";Caption:"Email";Style:"DataType:System.String;TextAlign:LeftCenter;";}	5{Width:34;Name:"Tel";Caption:"Tel";Style:"DataType:System.String;TextAlign:LeftCenter;";}	6{Width:69;Name:"Disabled";Caption:"Disabled";Style:"DataType:System.Byte;TextAlign:GeneralCenter;";}	</value>
+    <value>7,1,0,0,0,-1,Columns:0{Caption:"STT";Style:"DataType:System.Int64;TextAlign:GeneralCenter;";}	1{Width:56;Name:"UserID";Caption:"UserID";Style:"DataType:System.String;TextAlign:LeftCenter;";}	2{Width:80;Name:"UserName";Caption:"UserName";Style:"DataType:System.String;TextAlign:LeftCenter;";}	3{Width:78;Name:"PassWord";Caption:"PassWord";Style:"DataType:System.String;TextAlign:LeftCenter;";}	4{Width:48;Name:"Email";Caption:"Email";Style:"DataType:System.String;TextAlign:LeftCenter;";}	5{Width:34;Name:"Tel";Caption:"Tel";Style:"DataType:System.String;TextAlign:LeftCenter;";}	6{Width:69;Name:"Disabled";Caption:"Disabled";Style:"DataType:System.Byte;TextAlign:GeneralCenter;";}	</value>
   </data>
   <metadata name="pcd_GetUsersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>884, 17</value>
