@@ -66,6 +66,7 @@
             this.textEmail.ReadOnly = true;
             this.textEmail.Size = new System.Drawing.Size(297, 22);
             this.textEmail.TabIndex = 27;
+            this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             // 
             // textPassword
             // 

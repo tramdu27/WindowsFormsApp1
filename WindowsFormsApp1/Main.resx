@@ -117,23 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="basicWebDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="FlexGrid1.ColumnInfo" xml:space="preserve">
-    <value>7,1,0,0,0,-1,Columns:0{Caption:"STT";Style:"DataType:System.Int64;TextAlign:GeneralCenter;";}	1{Width:56;Name:"UserID";Caption:"UserID";Style:"DataType:System.String;TextAlign:LeftCenter;";}	2{Width:80;Name:"UserName";Caption:"UserName";Style:"DataType:System.String;TextAlign:LeftCenter;";}	3{Width:78;Name:"PassWord";Caption:"PassWord";Style:"DataType:System.String;TextAlign:LeftCenter;";}	4{Width:48;Name:"Email";Caption:"Email";Style:"DataType:System.String;TextAlign:LeftCenter;";}	5{Width:34;Name:"Tel";Caption:"Tel";Style:"DataType:System.String;TextAlign:LeftCenter;";}	6{Width:69;Name:"Disabled";Caption:"Disabled";Style:"DataType:System.Byte;TextAlign:GeneralCenter;";}	</value>
-  </data>
-  <metadata name="pcd_GetUsersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>884, 17</value>
+  <metadata name="c1CommandHolder1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>193, 17</value>
   </metadata>
   <metadata name="c1ContextMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 58</value>
+    <value>387, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="c1Command2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cwAAEnMBjCK5BwAAAPZJREFUOE+dkyEWgkAQhvcYVCKRyBWIRKuR6BWIHsFqNBK5gtHoFYzGcb9dR4YF
+        cQAAEnEB89x6jgAAAPZJREFUOE+dkyEWgkAQhvcYVCKRyBWIRKuR6BWIHsFqNBK5gtHoFYzGcb9dR4YF
         1Mf/3h92mP+bXVgcko0aw0MvUtciZSlS5CJ5tupnlsnNW9p9iEYA4a4TObQiTRPXVRWBZTGDArkA8YoA
         mjVsg4i6CStgmACYoJN1IkYJgPAcwEMmY7tdZAAEH2/PATpVwxj9DdDAD30HMM0aJTXdxTIgNSKY1AH0
         FkAhbQpGC4C775/cAwppUzBKAByBm3i2gKtfrO4iMcM4/8kCOA9UIEzQF2U/GyZMH/2d9wcguyZsiXOp
@@ -143,7 +137,7 @@
   <data name="c1Command3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cwAAEnMBjCK5BwAAAOZJREFUOE+dkyESgzAURHMMLBKJ5ApIZG0lsldA9gi1lZVIrlBZ2StUVm7zSFPC
+        cQAAEnEB89x6jgAAAOZJREFUOE+dkyESgzAURHMMLBKJ5ApIZG0lsldA9gi1lZVIrlBZ2StUVm7zSFPC
         EFKGP7Mi8PdtfgiG0s6azEMv1bVUllKRS3m2qneW6WGl9jhaHQBz10mnVmoat64qByyLBRTIDYgtB6DZ
         m0MjCowhYJgBSPDJPnFlFMxLAC9JRokzwPj6aglIpHqlAWhDpQEc5B/5XcQBGwWgDwE8iDWu6Wn7Z/eA
         B7HGmBiBm3gNAXe72LoLwpj/EgKYByoQEvxBhZ8NYaaP/s7qB9ChGbfEXF40Ib/mPSL5bDXeWlvTH7mj
@@ -153,7 +147,7 @@
   <data name="c1Command1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cwAAEnMBjCK5BwAAAPFJREFUOE+dky0Sg0AMhfcYWCQSyRWQyNpKZK+A7BFqKyuRXKGysleorEzzAaGh
+        cQAAEnEB89x6jgAAAPFJREFUOE+dky0Sg0AMhfcYWCQSyRWQyNpKZK+A7BFqKyuRXKGysleorEzzAaGh
         lJ/hzTyxu3lfNswSkOzUN9zUInkukqYiSSwSR7N+R5E81FIe22gHIFxVIqdSpCi6dZZ1wDSZQIHcgKg6
         AMUW9kHsgh7QjAB0sM7WcWYUwlMAh3TGPsitsAu/ek8Bv10JmnrIMsDbh026tw3wL2xykP+ApbBJawDU
         HsDGANjgp9aP3gEbwy1WzAi8xKsH3HUx3GLFNGP+iwcwD1QgdLAP5b86Jkwd9ZV6AMihaK/EXGaKsK05
@@ -163,7 +157,7 @@
   <data name="c1Command4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cwAAEnMBjCK5BwAAASVJREFUOE+dkyGSAjEQRSNHItdyhJFcAblyLXIkciySI4xFIpF7BSSSKyCRTb9O
+        cQAAEnEB89x6jgAAASVJREFUOE+dkyGSAjEQRSNHItdyhJFcAblyLXIkciySI4xFIpF7BSSSKyCRTb9O
         PhNmKARd9QuS7v+6E0Ii7MsYzZfBbGjNdj9m/cJs24TuRbeusavrsmns/6+x46/nD+uwZgDmU2ee8e+r
         vN4vM1DQfoQB2a0c4pEBFMtcG6uJ7m7ErCmGdQ2gSJ2fHV+76gjEHOBF0RkVo+5hauao7wHqWoxxgW4E
         gCKKeQaIgmKkSLcvRfj+uZhnAEaUOaKCaE0TXeAMQCKKJxB9CkYjTbGvf0Y2SL6DyFwDTv6QXt4BG0yh
@@ -171,13 +165,22 @@
         P/KLSCmlByLrvR9Z+/CYAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="c1CommandHolder1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1129, 17</value>
+  <data name="FlexGrid1.ColumnInfo" xml:space="preserve">
+    <value>8,1,0,0,0,-1,Columns:0{Width:41;}	1{Width:41;Caption:"STT";Style:"DataType:System.Int32;TextAlign:GeneralCenter;";}	2{Width:56;Name:"UserID";Caption:"UserID";AllowMerging:True;Style:"DataType:System.String;TextAlign:LeftCenter;";}	3{Width:80;Name:"UserName";Caption:"UserName";Style:"DataType:System.String;TextAlign:LeftCenter;";}	4{Width:78;Name:"PassWord";Caption:"PassWord";Style:"DataType:System.String;TextAlign:LeftCenter;";}	5{Width:48;Name:"Email";Caption:"Email";Style:"DataType:System.String;TextAlign:LeftCenter;";}	6{Width:34;Name:"Tel";Caption:"Tel";Style:"DataType:System.String;TextAlign:LeftCenter;";}	7{Width:69;Name:"Disabled";Caption:"Disabled";Style:"DataType:System.Byte;TextAlign:GeneralCenter;";}	</value>
+  </data>
+  <metadata name="pcd_GetUsersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>735, 17</value>
   </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>112</value>
+  <metadata name="basicWebDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>558, 17</value>
   </metadata>
-  <metadata name="c1TaskbarButton1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>188, 58</value>
+  <metadata name="basicWebDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>558, 17</value>
+  </metadata>
+  <metadata name="pcd_GetUsersTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 58</value>
+  </metadata>
+  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>255, 58</value>
   </metadata>
 </root>

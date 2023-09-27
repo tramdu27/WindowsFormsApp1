@@ -14,10 +14,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form4 : Form
     {
-        private Mainform mainform;
+        private Main main;
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
-        public Form4(string userID, string userName, string password, string email, string tel, bool disabled, Mainform mainform)
+        public Form4(string userID, string userName, string password, string email, string tel, bool disabled, Main main)
         {
             InitializeComponent();
           
@@ -27,10 +27,15 @@ namespace WindowsFormsApp1
             textEmail.Text = email;
             textTel.Text = tel;
             checkDisabled.Checked = disabled;
-            this.mainform = mainform;
+            this.main = main;
         }
 
         private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEmail_TextChanged(object sender, EventArgs e)
         {
 
         }
