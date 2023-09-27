@@ -19,11 +19,34 @@ namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
     {
-
+        #region Fields
         private Main main;
         private MainLogic mainLogic;
+        private string userID;
+        private string userName;
+        private string userEmail;
+        private string password;
+        private string tel;
+        private int disabled;
+        #endregion
 
-        public Form3(string userID, string userName, string password, string email, string tel, bool disabled, Main main)
+        #region Constructor
+        public Form3(MainLogic mainLogic)
+        {
+            this.mainLogic = mainLogic;
+        }
+
+        public Form3(string userID, string userName, string userEmail, string password, string tel, int disabled)
+        {
+            this.userID = userID;
+            this.userName = userName;
+            this.userEmail = userEmail;
+            this.password = password;
+            this.tel = tel;
+            this.disabled = disabled;
+        }
+
+        public Form3(string userID, string userName, string password, string email, string tel, int disabled, Main main)
         {
             InitializeComponent();
             textID.Text = userID;
@@ -31,10 +54,12 @@ namespace WindowsFormsApp1
             textPassword.Text = password;
             textEmail.Text = email;
             textTel.Text = tel;
-            checkDisabled.Checked = disabled;
+            disabled = checkDisabled.Checked ? 1 : 0;
             this.main = main;
             mainLogic = new MainLogic();
         }
+        #endregion
+        #region  Operations Button
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -44,6 +69,7 @@ namespace WindowsFormsApp1
             string email = textEmail.Text;
             string tel = textTel.Text;
             int disabled = checkDisabled.Checked ? 1 : 0;
+           
 
             if (textID.TextLength == 0)
             {
@@ -78,10 +104,13 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void Form3_Load(object sender, EventArgs e)
-        {
+       
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+        #endregion
     }
     //    private Main main;
     //    private DataGridView dataGridView1;

@@ -17,7 +17,12 @@ namespace WindowsFormsApp1
         private Main main;
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
-        public Form4(string userID, string userName, string password, string email, string tel, bool disabled, Main main)
+        private MainLogic mainLogic;
+        public Form4(MainLogic mainLogic)
+        {
+            this.mainLogic = mainLogic;
+        }
+        public Form4(string userID, string userName, string password, string email, string tel, int disabled, Main main)
         {
             InitializeComponent();
           
@@ -26,18 +31,11 @@ namespace WindowsFormsApp1
             textPassword.Text = password;
             textEmail.Text = email;
             textTel.Text = tel;
-            checkDisabled.Checked = disabled;
+            disabled = checkDisabled.Checked ? 1 : 0;
             this.main = main;
+            mainLogic = new MainLogic();
         }
 
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            #region Lấy dữ liệu 
+          
             string email = textEmail.Text.Trim();
             string password = textPassword.Text;
             string confirmPassword = textConfirmPassword.Text;
@@ -50,9 +50,8 @@ namespace WindowsFormsApp1
             string userName = textName.Text;
             string tel = textTel.Text;
             int disabled = checkDisabled.Checked ? 1 : 0;
-            #endregion
-
-            #region Kiểm tra và xử lý
+          
+       
             bool idExists = mainLogic.CheckIfIdExists(userID);
 
             if (textID.TextLength == 0)
@@ -88,12 +87,12 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Lưu không thành công. Kiểm tra lại thông tin người dùng.", "Thông báo", MessageBoxButtons.OK);
                 }
             }
-            #endregion
+           
         }
 
         public void btnNhaptiep_Click(object sender, EventArgs e)
         {
-            #region Lấy dữ liệu 
+          
             string email = textEmail.Text.Trim();
             string password = textPassword.Text;
             string confirmPassword = textConfirmPassword.Text;
@@ -101,9 +100,8 @@ namespace WindowsFormsApp1
             string userName = textName.Text;
             string tel = textTel.Text;
             int disabled = checkDisabled.Checked ? 1 : 0;
-            #endregion
-
-            #region Kiểm tra và xử lý
+           
+          
             bool idExists = mainLogic.CheckIfIdExists(userID);
 
             if (textID.TextLength == 0)
@@ -158,7 +156,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Lưu không thành công. Kiểm tra lại thông tin người dùng.", "Thông báo", MessageBoxButtons.OK);
                 }
             }
-            #endregion
+          
         }
 
         // Các sự kiện và phương thức khác ở đây...

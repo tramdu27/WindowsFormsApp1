@@ -53,6 +53,7 @@
             this.button3.TabIndex = 30;
             this.button3.Text = "Đóng";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -106,6 +107,7 @@
             // 
             this.textID.Location = new System.Drawing.Point(181, 27);
             this.textID.Name = "textID";
+            this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(297, 22);
             this.textID.TabIndex = 21;
             // 
@@ -196,7 +198,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

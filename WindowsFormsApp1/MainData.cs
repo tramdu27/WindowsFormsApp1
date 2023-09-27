@@ -11,11 +11,14 @@ namespace WindowsFormsApp1
 {
     public class DataLayer
     {
+        #region Fields
         private Main main;
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
         private SqlDataAdapter dataAdapter;
         private DataSet dataSet;
+        #endregion Fields
+        #region Constructor
         public DataLayer()
         {
             connection = new SqlConnection(cs);
@@ -23,6 +26,8 @@ namespace WindowsFormsApp1
             dataSet = new DataSet();
 
         }
+        #endregion
+        #region Validation
         private bool IsValidEmail(string email)
         {
             //Email validation
@@ -47,7 +52,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
+        #endregion
 
         public void LoadUserData()
         {
@@ -55,8 +60,8 @@ namespace WindowsFormsApp1
             dataAdapter.Fill(dataSet, "pcd_GetUsers");
         }
 
-    
-        
+
+        #region Operations
 
         public void DeleteUser(string userID)
         {
@@ -70,6 +75,7 @@ namespace WindowsFormsApp1
                     command.ExecuteNonQuery();
                 }
             }
+            //LoadUserData();
         }
         public bool SaveUser(string userID, string userName, string password, string email, string tel, int disabled)
         {
@@ -122,5 +128,63 @@ namespace WindowsFormsApp1
             
 
         }
+        public bool ViewUser(string userID, string userName, string password, string email, string tel, int disabled)
+        {
+            using (SqlConnection connection = new SqlConnection(cs))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("pcd_GetUsersById", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@userid", userID);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            userID = reader["UserID"].ToString();
+                            userName = reader["UserName"].ToString();
+                            userName = reader["UserName"].ToString();
+                            password = reader["Password"].ToString();
+                            email = reader["Email"].ToString();
+                            tel = reader["Tel"].ToString();
+                            disabled = Convert.ToInt32(reader["Disabled"]);
+                            return true; // Trả về true nếu lấy thông tin thành công
+                        }
+                    }
+                }
+            }
+
+            // Nếu không tìm thấy thông tin người dùng, gán giá trị mặc định cho các biến đầu ra và trả về false
+            //userName = string.Empty;
+            //password = string.Empty;
+            //email = string.Empty;
+            //tel = string.Empty;
+            //disabled = 0;
+            return false;
+        }
+
+        //public bool ViewUser(string userID, string userName, string password, string email, string tel, int disabled)
+        //{
+        //    using (SqlConnection connection = new SqlConnection(cs))
+        //    {
+        //        connection.Open();
+        //        using (SqlCommand command = new SqlCommand("pcd_GetUsersById", connection))
+        //        {
+        //            command.CommandType = CommandType.StoredProcedure;
+        //            command.Parameters.AddWithValue("@userid", userID);
+        //            command.Parameters.AddWithValue("@username", userName);
+        //            command.Parameters.AddWithValue("@password", password);
+        //            command.Parameters.AddWithValue("@email", email);
+        //            command.Parameters.AddWithValue("@tel", tel);
+        //            command.Parameters.AddWithValue("@disabled", disabled);
+        //            command.ExecuteNonQuery();
+        //        }
+        //        return true;
+        //    }
+
+
+        //}
+        #endregion
     }
 }

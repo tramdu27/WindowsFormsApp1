@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="c1CommandHolder1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>193, 17</value>
+    <value>401, 17</value>
   </metadata>
   <metadata name="c1ContextMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>387, 17</value>
+    <value>595, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="c1Command2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -166,21 +166,15 @@
 </value>
   </data>
   <data name="FlexGrid1.ColumnInfo" xml:space="preserve">
-    <value>8,1,0,0,0,-1,Columns:0{Width:41;}	1{Width:41;Caption:"STT";Style:"DataType:System.Int32;TextAlign:GeneralCenter;";}	2{Width:56;Name:"UserID";Caption:"UserID";AllowMerging:True;Style:"DataType:System.String;TextAlign:LeftCenter;";}	3{Width:80;Name:"UserName";Caption:"UserName";Style:"DataType:System.String;TextAlign:LeftCenter;";}	4{Width:78;Name:"PassWord";Caption:"PassWord";Style:"DataType:System.String;TextAlign:LeftCenter;";}	5{Width:48;Name:"Email";Caption:"Email";Style:"DataType:System.String;TextAlign:LeftCenter;";}	6{Width:34;Name:"Tel";Caption:"Tel";Style:"DataType:System.String;TextAlign:LeftCenter;";}	7{Width:69;Name:"Disabled";Caption:"Disabled";Style:"DataType:System.Byte;TextAlign:GeneralCenter;";}	</value>
+    <value>7,1,0,0,0,-1,Columns:0{Width:41;}	1{Width:56;Name:"UserID";Caption:"UserID";Style:"DataType:System.String;TextAlign:LeftCenter;";}	2{Width:80;Name:"UserName";Caption:"UserName";Style:"DataType:System.String;TextAlign:LeftCenter;";}	3{Width:78;Name:"PassWord";Caption:"PassWord";Style:"DataType:System.String;TextAlign:LeftCenter;";}	4{Width:48;Name:"Email";Caption:"Email";Style:"DataType:System.String;TextAlign:LeftCenter;";}	5{Width:34;Name:"Tel";Caption:"Tel";Style:"DataType:System.String;TextAlign:LeftCenter;";}	6{Width:69;Name:"Disabled";Caption:"Disabled";Style:"DataType:System.Byte;TextAlign:GeneralCenter;";}	</value>
   </data>
   <metadata name="pcd_GetUsersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>735, 17</value>
+    <value>942, 17</value>
   </metadata>
-  <metadata name="basicWebDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>558, 17</value>
-  </metadata>
-  <metadata name="basicWebDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>558, 17</value>
+  <metadata name="c1TaskbarButton1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>766, 17</value>
   </metadata>
   <metadata name="pcd_GetUsersTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 58</value>
-  </metadata>
-  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>255, 58</value>
+    <value>1187, 17</value>
   </metadata>
 </root>
