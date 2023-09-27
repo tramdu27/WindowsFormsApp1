@@ -36,15 +36,7 @@ namespace WindowsFormsApp1
             this.mainLogic = mainLogic;
         }
 
-        public Form3(string userID, string userName, string userEmail, string password, string tel, int disabled)
-        {
-            this.userID = userID;
-            this.userName = userName;
-            this.userEmail = userEmail;
-            this.password = password;
-            this.tel = tel;
-            this.disabled = disabled;
-        }
+
 
         public Form3(string userID, string userName, string password, string email, string tel, int disabled, Main main)
         {

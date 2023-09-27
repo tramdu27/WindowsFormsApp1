@@ -164,6 +164,7 @@
             this.c1Command3.Shortcut = System.Windows.Forms.Shortcut.CtrlD;
             this.c1Command3.ShortcutText = "";
             this.c1Command3.Text = "Delete";
+            this.c1Command3.Click += new C1.Win.C1Command.ClickEventHandler(this.c1Command3_Click);
             // 
             // c1CommandLink2
             // 
@@ -222,6 +223,7 @@
             this.c1Button2.Text = "Đóng";
             this.c1Button2.UseVisualStyleBackColor = true;
             this.c1Button2.UseVisualStyleForeColor = true;
+            this.c1Button2.Click += new System.EventHandler(this.c1Button2_Click);
             // 
             // Main
             // 
