@@ -42,12 +42,12 @@ namespace WindowsFormsApp1
     #region Fields
         private Main main;
     private LogicLayer logicLayer;
-    private string userID;
-    private string userName;
-    private string userEmail;
-    private string password;
-    private string tel;
-    private int disabled;
+    //private string userID;
+    //private string userName;
+    //private string userEmail;
+    //private string password;
+    //private string tel;
+    //private int disabled;
     #endregion
 
     #region Constructor

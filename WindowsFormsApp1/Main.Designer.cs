@@ -96,11 +96,12 @@
             this.FlexGrid1.AutoResize = true;
             this.FlexGrid1.ColumnInfo = resources.GetString("FlexGrid1.ColumnInfo");
             this.FlexGrid1.DataSource = this.pcd_GetUsersBindingSource;
-            this.FlexGrid1.Location = new System.Drawing.Point(2, 0);
+            this.FlexGrid1.Location = new System.Drawing.Point(-2, -1);
             this.FlexGrid1.Name = "FlexGrid1";
             this.FlexGrid1.Rows.Count = 1;
-            this.FlexGrid1.Size = new System.Drawing.Size(799, 397);
+            this.FlexGrid1.Size = new System.Drawing.Size(803, 410);
             this.FlexGrid1.TabIndex = 2;
+            this.FlexGrid1.Click += new System.EventHandler(this.FlexGrid1_Click);
             // 
             // pcd_GetUsersBindingSource
             // 
