@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using WindowsFormsApp1.BasicWebDataSetTableAdapters;
 
 using System.Text.RegularExpressions;
+using BUS;
 
 namespace WindowsFormsApp1
 {
@@ -22,14 +23,14 @@ namespace WindowsFormsApp1
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
         private Main main;
-        private MainLogic mainLogic;
+        private LogicLayer logicLayer;
 
 
         public Form2(Main main)
         {
             InitializeComponent();
             this.main = main;
-            mainLogic = new MainLogic();
+            logicLayer = new LogicLayer();
         }
 
 
@@ -52,14 +53,14 @@ namespace WindowsFormsApp1
             int disabled = checkDisabled.Checked ? 1 : 0;
           
        
-            bool idExists = mainLogic.CheckIfIdExists(userID);
+            bool idExists = logicLayer.CheckIfIdExists(userID);
 
             if (textID.TextLength == 0)
             {
                 MessageBox.Show("Vui lòng nhập mã người dùng!", "Thông báo", MessageBoxButtons.OK);
                 textID.Focus();
             }
-            else if (!mainLogic.IsValidEmail(email))
+            else if (!logicLayer.IsValidEmail(email))
             {
                 label6.Text = "Email không hợp lệ.";
                 label6.Visible = true;
@@ -75,7 +76,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                bool saved = mainLogic.SaveUser(userID, userName, password, email, tel, disabled);
+                bool saved = logicLayer.SaveUser(userID, userName, password, email, tel, disabled);
 
                 if (saved)
                 {
@@ -102,14 +103,14 @@ namespace WindowsFormsApp1
             int disabled = checkDisabled.Checked ? 1 : 0;
            
           
-            bool idExists = mainLogic.CheckIfIdExists(userID);
+            bool idExists = logicLayer.CheckIfIdExists(userID);
 
             if (textID.TextLength == 0)
             {
                 MessageBox.Show("Vui lòng nhập mã người dùng!", "Thông báo", MessageBoxButtons.OK);
                 textID.Focus();
             }
-            else if (!mainLogic.IsValidEmail(email))
+            else if (!logicLayer.IsValidEmail(email))
             {
                 label6.Text = "Email không hợp lệ.";
                 label6.Visible = true;
@@ -136,7 +137,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                bool saved = mainLogic.SaveUser(userID, userName, password, email, tel, disabled);
+                bool saved = logicLayer.SaveUser(userID, userName, password, email, tel, disabled);
 
                 if (saved)
                 {

@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
+using BUS;
 
 namespace WindowsFormsApp1
 {
@@ -17,10 +19,8 @@ namespace WindowsFormsApp1
     {
         #region Fields
 
-        //private SqlConnection connection;
-        //string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
-        private DataLayer layer;
-        private MainLogic mainLogic;
+        public DataLayer layer;
+        private LogicLayer logicLayer;
         private Form3 form3;
         private Form4 form4;
         #endregion
@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             layer = new DataLayer();
-            mainLogic = new MainLogic();
+            logicLayer = new LogicLayer();
 
         }
         #endregion
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
 
                 int disabled = selectedRow["Disabled"].ToString().Equals("True") ? 1 : 0;
 
-                mainLogic.UpdateUser(userID, userName, userEmail, password, tel, disabled);
+                logicLayer.UpdateUser(userID, userName, userEmail, password, tel, disabled);
                 Form3 form3 = new Form3(userID, userName, userEmail, password, tel, disabled, this);
                 form3.Show();
 
@@ -99,7 +99,7 @@ namespace WindowsFormsApp1
                 int disabled = selectedRow["Disabled"].ToString().Equals("True") ? 1 : 0;
 
                 // Gọi phương thức View để lấy thông tin người dùng
-                mainLogic.View(userID, userName, password, userEmail, tel, disabled);
+                logicLayer.View(userID, userName, password, userEmail, tel, disabled);
                 // Hiển thị Form4 để xem thông tin người dùng
                 Form4 form4 = new Form4(userID, userName, password, userEmail, tel, disabled, this);
                 form4.ShowDialog();
@@ -119,7 +119,7 @@ namespace WindowsFormsApp1
 
                 int disabled = selectedRow["Disabled"].ToString().Equals("True") ? 1 : 0;
 
-                mainLogic.UpdateUser(userID, userName, userEmail, password, tel, disabled);
+                logicLayer.UpdateUser(userID, userName, userEmail, password, tel, disabled);
                 Form4 form4 = new Form4(userID, userName, userEmail, password, tel, disabled, this);
                 form4.Show();
 
@@ -161,8 +161,8 @@ namespace WindowsFormsApp1
 
                 if (result == DialogResult.Yes)
                 {
-                    //Gọi DeleteUser() trong class MainLogic
-                    mainLogic.DeleteUser(userID);
+                    //Gọi DeleteUser() trong class LogicLayer
+                    logicLayer.DeleteUser(userID);
                     //Gọi ReloadData() để load lại dữ liệu sau khi xóa user
                     ReloadData();
 
@@ -173,27 +173,6 @@ namespace WindowsFormsApp1
 
     
 
-        //private void c1Command1_Click_1(object sender, C1.Win.C1Command.ClickEventArgs e)
-        //{
-
-
-        //    if (FlexGrid1.RowSel > 0)
-        //    {
-        //        Row selectedRow = FlexGrid1.Rows[FlexGrid1.RowSel];
-        //        string userID = selectedRow["UserID"].ToString();
-        //        string userName = selectedRow["UserName"].ToString();
-        //        string userEmail = selectedRow["Email"].ToString();
-        //        string password = selectedRow["Password"].ToString();
-        //        string tel = selectedRow["Tel"].ToString();
-
-        //        int disabled = selectedRow["Disabled"].ToString().Equals("True") ? 1 : 0;
-
-        //        mainLogic.UpdateUser(userID, userName, userEmail, password, tel, disabled);
-        //        Form3 form3 = new Form3(userID, userName, userEmail, password, tel, disabled);
-        //        form3.ShowDialog();
-
-        //    }
-        //}
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -40,7 +41,7 @@ namespace WindowsFormsApp1
 
     #region Fields
         private Main main;
-    private MainLogic mainLogic;
+    private LogicLayer logicLayer;
     private string userID;
     private string userName;
     private string userEmail;
@@ -50,9 +51,9 @@ namespace WindowsFormsApp1
     #endregion
 
     #region Constructor
-    public Form4(MainLogic mainLogic)
+    public Form4(LogicLayer logicLayer)
     {
-        this.mainLogic = mainLogic;
+        this.logicLayer = logicLayer;
     }
 
 
@@ -67,7 +68,7 @@ namespace WindowsFormsApp1
         textTel.Text = tel;
         disabled = checkDisabled.Checked ? 1 : 0;
         this.main = main;
-        mainLogic = new MainLogic();
+        logicLayer = new LogicLayer();
     }
     #endregion
 }

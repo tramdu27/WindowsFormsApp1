@@ -5,14 +5,13 @@ using System.Configuration;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
-
-namespace WindowsFormsApp1
+using System.Text.RegularExpressions; 
+namespace DAO
 {
     public class DataLayer
     {
         #region Fields
-        private Main main;
+       
         private SqlConnection connection;
         string cs = ConfigurationManager.ConnectionStrings["basicdb"].ConnectionString;
         private SqlDataAdapter dataAdapter;
@@ -75,7 +74,7 @@ namespace WindowsFormsApp1
                     command.ExecuteNonQuery();
                 }
             }
-            //LoadUserData();
+           
         }
         public bool SaveUser(string userID, string userName, string password, string email, string tel, int disabled)
         {

@@ -14,6 +14,7 @@ using static C1.Util.Win.Win32;
 using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Reflection.Emit;
+using BUS;
 
 namespace WindowsFormsApp1
 {
@@ -21,7 +22,7 @@ namespace WindowsFormsApp1
     {
         #region Fields
         private Main main;
-        private MainLogic mainLogic;
+        private LogicLayer logicLayer;
         private string userID;
         private string userName;
         private string userEmail;
@@ -31,9 +32,9 @@ namespace WindowsFormsApp1
         #endregion
 
         #region Constructor
-        public Form3(MainLogic mainLogic)
+        public Form3(LogicLayer logicLayer)
         {
-            this.mainLogic = mainLogic;
+            this.logicLayer = logicLayer;
         }
 
 
@@ -48,7 +49,7 @@ namespace WindowsFormsApp1
             textTel.Text = tel;
             disabled = checkDisabled.Checked ? 1 : 0;
             this.main = main;
-            mainLogic = new MainLogic();
+            logicLayer = new LogicLayer();
         }
         #endregion
         #region  Operations Button
@@ -69,14 +70,14 @@ namespace WindowsFormsApp1
                 textID.Focus();
                 return;
             }
-            if (!mainLogic.IsValidEmail(email))
+            if (!logicLayer.IsValidEmail(email))
             {
                 label6.Text = "Email không hợp lệ.";
                 label6.Visible = true;
                 return;
             }
 
-            bool updated = mainLogic.UpdateUser(userID, userName, password, email, tel, disabled);
+            bool updated = logicLayer.UpdateUser(userID, userName, password, email, tel, disabled);
 
             if (updated)
             {

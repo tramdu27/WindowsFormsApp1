@@ -1,17 +1,18 @@
-﻿using C1.Win.C1FlexGrid;
+﻿//using C1.Win.C1FlexGrid;
+using DAO;
 using System;
 using System.Data;
 using System.Text.RegularExpressions;
 
-namespace WindowsFormsApp1
+namespace BUS
 {
-    public class MainLogic
+    public class LogicLayer
     {
         #region Fields
-        private DataLayer dataLayer;
+        public DataLayer dataLayer;
         #endregion
         #region Constructor
-        public MainLogic()
+        public LogicLayer()
         {
             dataLayer = new DataLayer();
         }
@@ -51,11 +52,11 @@ namespace WindowsFormsApp1
 
         #endregion
         #region Private
-        private void ReloadData(C1.Win.C1FlexGrid.C1FlexGrid flexGrid)
-        {
-            flexGrid.Refresh();
+        //private void ReloadData(C1.Win.C1FlexGrid.C1FlexGrid flexGrid)
+        //{
+        //    flexGrid.Refresh();
 
-        }
+        //}
         #endregion
     }
 
