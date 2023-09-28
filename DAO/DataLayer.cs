@@ -154,36 +154,16 @@ namespace DAO
                 }
             }
 
-            // Nếu không tìm thấy thông tin người dùng, gán giá trị mặc định cho các biến đầu ra và trả về false
-            //userName = string.Empty;
-            //password = string.Empty;
-            //email = string.Empty;
-            //tel = string.Empty;
-            //disabled = 0;
+            //Nếu không tìm thấy thông tin người dùng, gán giá trị mặc định cho các biến đầu ra và trả về false
+            userName = string.Empty;
+            password = string.Empty;
+            email = string.Empty;
+            tel = string.Empty;
+            disabled = 0;
             return false;
         }
 
-        //public bool ViewUser(string userID, string userName, string password, string email, string tel, int disabled)
-        //{
-        //    using (SqlConnection connection = new SqlConnection(cs))
-        //    {
-        //        connection.Open();
-        //        using (SqlCommand command = new SqlCommand("pcd_GetUsersById", connection))
-        //        {
-        //            command.CommandType = CommandType.StoredProcedure;
-        //            command.Parameters.AddWithValue("@userid", userID);
-        //            command.Parameters.AddWithValue("@username", userName);
-        //            command.Parameters.AddWithValue("@password", password);
-        //            command.Parameters.AddWithValue("@email", email);
-        //            command.Parameters.AddWithValue("@tel", tel);
-        //            command.Parameters.AddWithValue("@disabled", disabled);
-        //            command.ExecuteNonQuery();
-        //        }
-        //        return true;
-        //    }
-
-
-        //}
+        
         #endregion
     }
 }
