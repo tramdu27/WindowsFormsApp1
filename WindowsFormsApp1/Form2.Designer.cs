@@ -230,7 +230,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Form2";
             this.Text = "Cập nhật thông tin người dùng";
-            this.Load += new System.EventHandler(this.Form2_Load);
+           // this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

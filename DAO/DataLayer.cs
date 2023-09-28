@@ -60,7 +60,7 @@ namespace DAO
         }
 
 
-        #region Operations
+        #region Handle Events
 
         public void DeleteUser(string userID)
         {

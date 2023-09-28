@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
         }
 
 
-
+        #region Form Events
         private void btnLuu_Click(object sender, EventArgs e)
         {
           
@@ -160,16 +160,11 @@ namespace WindowsFormsApp1
           
         }
 
-        // Các sự kiện và phương thức khác ở đây...
 
 
+        #endregion
 
 
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
 
 
     }

@@ -101,7 +101,7 @@
             this.FlexGrid1.Rows.Count = 1;
             this.FlexGrid1.Size = new System.Drawing.Size(803, 410);
             this.FlexGrid1.TabIndex = 2;
-            this.FlexGrid1.Click += new System.EventHandler(this.FlexGrid1_Click);
+            //this.FlexGrid1.Click += new System.EventHandler(this.FlexGrid1_Click);
             // 
             // pcd_GetUsersBindingSource
             // 

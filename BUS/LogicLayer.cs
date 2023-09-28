@@ -29,7 +29,7 @@ namespace BUS
             return dataLayer.CheckIfIdExists(userID);
         }
         #endregion
-        #region Operations
+        #region Public Methods
         public bool SaveUser(string userID, string userName, string password, string email, string tel, int disabled)
         {
             return dataLayer.SaveUser(userID, userName, password, email, tel, disabled);
@@ -51,13 +51,7 @@ namespace BUS
         }
 
         #endregion
-        #region Private
-        //private void ReloadData(C1.Win.C1FlexGrid.C1FlexGrid flexGrid)
-        //{
-        //    flexGrid.Refresh();
-
-        //}
-        #endregion
+        
     }
 
 }

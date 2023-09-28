@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
         }
         #endregion
 
-        #region Command Button
+        #region Click Events
         private void c1Command1_Click(object sender, C1.Win.C1Command.ClickEventArgs e)
         {
             // Đã chọn ít nhất 1 dòng
@@ -157,10 +157,7 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        private void FlexGrid1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 
